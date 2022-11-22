@@ -1,0 +1,612 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  height: 3000px;
+  background-color: #eee;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-transform: capitalize;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+:root {
+  --main: #0188df;
+  --sub: #354046;
+  --trans: 0.5s;
+}
+
+.container {
+  margin: 0px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.overly {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  background-color: #524a4ab5;
+
+  z-index: 888888888888888888;
+}
+.overly img {
+  margin: auto auto;
+  height: 300px;
+  width: 400px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+.overly i {
+  position: absolute;
+  top: 31%;
+  right: 38%;
+  background: var(--main);
+  padding: 10px;
+  border-radius: 50%;
+  display: block;
+  transform: translate(-50%, 50%);
+  transition: var(--trans);
+  z-index: 66;
+}
+@media (max-width: 767px) {
+  .overly i {
+    position: absolute;
+    top: 30%;
+    right: 47%;
+    transition: var(--trans);
+  }
+  .overly i:hover {
+    color: red;
+    background-color: white;
+  }
+}
+.overly i:hover {
+  color: red;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .container {
+    width: 350px;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+  .container {
+    width: 450px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .container {
+    width: 1420px;
+  }
+}
+
+/* start header  */
+header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0px;
+  left: 0px;
+  z-index: 55555;
+  background-color: white;
+  box-shadow: 10px 10px 10px -11px rgb(0 0 0 / 32%);
+}
+header h2 {
+  color: var(--sub);
+  font-size: 27px;
+}
+header h2 span {
+  color: var(--main);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+header .container nav {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+header .container ul {
+  display: flex;
+  align-items: center;
+}
+header .container nav i {
+  display: none;
+}
+header .container ul li a {
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  font-size: 19px;
+  transition: var(--trans);
+}
+header .container ul li a:hover {
+  color: var(--main);
+}
+
+@media (max-width: 767px) {
+  header .container nav i {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  header .container ul {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    background: var(--main);
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    top: -300px;
+    transition: var(--trans);
+    z-index: 0;
+  }
+  header .container ul.active {
+    top: 90px;
+  }
+  header h2 {
+    font-size: 22px;
+  }
+  header .container ul li {
+    margin-top: 15px;
+  }
+  header .container ul li a {
+    color: white;
+    transition: var(--trans);
+  }
+  header .container ul li a:hover {
+    color: black;
+  }
+}
+/* end header  */
+/* strat home  */
+.home {
+  padding: 50px 0px;
+
+  position: relative;
+  top: 70px;
+}
+
+.home .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home .container > div {
+  flex-basis: 49%;
+}
+.home .container > div img {
+  max-width: 100%;
+}
+.home .container > div h2 {
+  font-size: 51px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.home .container > div h2 span {
+  color: var(--main);
+}
+.home .container > div button {
+  position: relative;
+  width: 120px;
+  display: block;
+  height: 40px;
+  background-color: var(--sub);
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+  line-height: 40px;
+  overflow: hidden;
+  font-weight: bold;
+  z-index: 0;
+}
+.home .container > div button::after {
+  position: absolute;
+  bottom: 0px;
+  content: "";
+  left: 0px;
+  width: 100%;
+  height: 0%;
+  transition: var(--trans);
+  background-color: var(--main);
+  z-index: -1;
+}
+.home .container > div button:hover::after {
+  height: 100%;
+}
+.home .container > div button:hover {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .home .container {
+    flex-direction: column;
+  }
+  .home .container > div h2 {
+    font-size: 35px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .home .container > div button {
+    margin: 30px auto;
+  }
+}
+
+/* end home  */
+/* start about  */
+
+.about {
+  background-color: white;
+}
+.about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about .container > div {
+  flex-basis: 49%;
+}
+.about .container > div img {
+  width: 100%;
+}
+.about .container > div h3 {
+  margin-bottom: 8px;
+}
+.about .container > div h3 i {
+  color: var(--main);
+  font-size: 29px;
+  margin-right: 5px;
+}
+.about .container > div p {
+  margin-left: 45px;
+  color: #777;
+  font-size: 18px;
+  font-weight: 500;
+}
+.about .container > div div {
+  margin-top: 25px;
+}
+@media (max-width: 767px) {
+  .about .container > div {
+    flex-basis: 100%;
+  }
+  .about .container > div:nth-of-type(2) {
+    display: none;
+  }
+  .about {
+    padding: 100px 0px 40px;
+    position: relative;
+  }
+}
+/* end about  */
+/* start facilites  */
+.facility {
+  padding: 50px 0px;
+}
+.facility h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.facility h1 span {
+  color: var(--main);
+}
+.facility .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+  grid-template-rows: 290px 290px 290px;
+  gap: 20px;
+}
+.facility .container > div img {
+  width: 100%;
+  height: 100%;
+}
+.facility .container > div {
+  border-radius: 5px;
+  overflow: hidden;
+}
+/* end facility  */
+/* start review */
+.review {
+  padding: 50px 0px;
+  background-color: var(--main);
+}
+.review h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+.review h1 span {
+  color: black;
+}
+.review .container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+.review .container > div {
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  position: relative;
+}
+.review .container > div img {
+  position: absolute;
+  bottom: -28px;
+  left: -7px;
+  width: 70px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 555;
+}
+.review .container > div p {
+  line-height: 1.8;
+  color: #777;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.review .container > div div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.review .container > div div h2 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--main);
+}
+.review .container > div div span {
+  font-weight: 500;
+  color: #777;
+}
+/* end review  */
+/* start statistic */
+.statistics {
+  padding: 50px 0px;
+  background-color: white;
+}
+.statistics .container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+.statistics .container > div {
+  border: 2px solid var(--main);
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.statistics .container > div i {
+  margin-bottom: 20px;
+  color: var(--main);
+}
+.statistics .container > div h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.statistics .container > div span {
+  font-size: 27px;
+  color: #777;
+}
+/* end statistic */
+/* start appointment  */
+.appointment {
+  padding: 50px 0px;
+  background-color: #333;
+}
+.appointment h1 {
+  color: white;
+  text-align: center;
+}
+.appointment h1 span {
+  color: var(--main);
+}
+.appointment .container > div {
+  width: 60%;
+  margin: 50px auto;
+}
+.appointment .container > div form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.appointment .container > div form > select,
+.appointment .container > div form > input {
+  width: 48%;
+  height: 45px;
+  margin-bottom: 15px;
+  text-indent: 15px;
+}
+@media (max-width: 767px) {
+  .appointment .container > div form > select,
+  .appointment .container > div form > input {
+    width: 100%;
+  }
+}
+.appointment .container > div form > textarea {
+  width: 100%;
+  height: 280px;
+  text-indent: 15px;
+  padding-top: 15px;
+}
+.appointment .container > div form button {
+  margin: 20px auto;
+  background: var(--main);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  transition: var(--trans);
+}
+
+.appointment .container > div form button:hover {
+  color: var(--main);
+  cursor: pointer;
+  background-color: white;
+}
+/* end appointment  */
+/* start posts  */
+.post {
+  position: relative;
+  padding: 50px 0px;
+}
+.post h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.post h1 span {
+  color: var(--main);
+}
+.post .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+  gap: 15px;
+}
+.post .container > div {
+  box-shadow: 6px 21px 15px 2px rgb(0 0 0 / 15%);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.post .container > div:hover {
+  cursor: pointer;
+}
+.post .container > div p {
+  color: #777;
+  line-height: 1.6;
+  margin: 15px 0px;
+}
+.post .container > div div {
+  padding: 15px;
+}
+.post .container > div:hover div h2 {
+  color: var(--main);
+}
+.post .container > div img {
+  height: 306px !important;
+  width: 100%;
+}
+.post .container > div a {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: rgb(149, 149, 149);
+  display: block;
+}
+.post .container > div button {
+  padding: 10px;
+  margin: 20px 0px;
+  background-color: #0188df;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+/* end posts  */
+
+/* start footer  */
+footer {
+  padding: 30px 0px 0px;
+  background: #333;
+  color: white;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 20px;
+  text-align: center;
+  padding: 20px 0px 50px;
+}
+footer .container > div {
+  margin-bottom: 10px;
+}
+footer .container .one {
+  text-align: left;
+}
+footer .container .one h1 {
+  margin-bottom: 15px;
+}
+
+footer .container .three h2,
+footer .container .two h2 {
+  margin-bottom: 15px;
+  color: var(--main);
+}
+footer .container .one h1 span {
+  color: var(--main);
+}
+footer .container .one p {
+  line-height: 1.6;
+  font-size: 18px;
+}
+footer .container .three ul li,
+footer .container .two ul li {
+  margin-top: 8px;
+}
+footer .container .three ul li a,
+footer .container .two ul li a {
+  color: white;
+  transition: var(--trans);
+  font-size: 17px;
+}
+footer .container .two ul li a:hover {
+  color: var(--main);
+}
+footer h3 {
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: center;
+}
+footer h3 span {
+  color: var(--main);
+  display: block;
+  margin: 5px;
+  font-size: 23px;
+  font-weight: bold;
+}
+/* end footer  */
